@@ -11,5 +11,5 @@ Get the http status code from https://zh.wikipedia.org/wiki/XXX
 
 200 - famous, 404 - unfamous
 
-# Tips:
+# Tips
 This tool is for Chinese person names only
