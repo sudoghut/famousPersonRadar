@@ -8,6 +8,7 @@ Use wiki to detect that whether this is a famous Chinese name
 
 # Principle
 Get the http status code from https://zh.wikipedia.org/wiki/XXX
+
 200 - famous, 404 - unfamous
 
 # Tips:
