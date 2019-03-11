@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"net/http"
 	"os"
+	"strconv"
 	"strings"
 	"time"
 )
@@ -30,9 +31,15 @@ func readPersonList(fileName string) []string {
 }
 
 func getWikiStatus(personList []string) []string {
+	var count int
+	countThreshold := 100
 	urlPrefix := "https://zh.wikipedia.org/wiki/"
 	var output []string
 	for _, personName := range personList {
+		count++
+		if count%countThreshold == 0 {
+			fmt.Println(strconv.Itoa(count) + " records finished...")
+		}
 		url := urlPrefix + personName
 		resp, err := http.Head(url)
 		time.Sleep(100)
